@@ -10,6 +10,11 @@
 #include "Open.h"
 #include "SimpleImage.h"
 #include "Utility.h"
+#if (PNG_LIBPNG_VER < 10000)
+#include <csetjmp>
+#define OLD_PNG
+#else
+#endif
 
 namespace corona {
 
@@ -38,7 +43,7 @@ namespace corona {
   void PNG_error_function(png_structp png_ptr, png_const_charp warning) {
     // copied from libpng's pngerror.cpp, but without the fprintf
 
-#if (PNG_LIBPNG_VER > 10000)
+#ifdef OLD_PNG
     png_longjmp(png_ptr, 1);
 #else
     jmp_buf jmpbuf;
