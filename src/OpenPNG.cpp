@@ -4,6 +4,7 @@
  *         png_ptr->jmpbuf in older versions of libpng.
  */
 
+#define PNG_SETJMP_SUPPORTED 1
 
 #include <png.h>
 #include "Debug.h"
@@ -11,7 +12,7 @@
 #include "SimpleImage.h"
 #include "Utility.h"
 #include <cstring>
-#if (PNG_LIBPNG_VER < 10000)
+#if (PNG_LIBPNG_VER < 12000)
 #include <csetjmp>
 #define OLD_PNG
 #else
