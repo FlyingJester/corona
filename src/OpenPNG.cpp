@@ -10,6 +10,7 @@
 #include "Open.h"
 #include "SimpleImage.h"
 #include "Utility.h"
+#include <cstring>
 #if (PNG_LIBPNG_VER < 10000)
 #include <csetjmp>
 #define OLD_PNG
