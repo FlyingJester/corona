@@ -1,5 +1,4 @@
 #include <memory>
-#include <cstring>
 #include <png.h>
 #include "Debug.h"
 #include "Save.h"
@@ -150,6 +149,7 @@ namespace corona {
 #if (PNG_LIBPNG_VER < 10000)
     info_ptr->valid |= PNG_INFO_IDAT;
 #endif
+
     // actually write the image
     png_write_png(png_ptr, info_ptr, PNG_TRANSFORM_IDENTITY, NULL);
 
