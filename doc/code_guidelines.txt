@@ -49,3 +49,4 @@ Semantics:
     int size   = read32(header);
     int width  = read32(header + 4);
     int height = read32(header + 8);
+

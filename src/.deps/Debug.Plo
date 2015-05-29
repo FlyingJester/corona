@@ -1,5 +1,0 @@
-Debug.lo: Debug.cpp /usr/include/stdc-predef.h Debug.h
-
-/usr/include/stdc-predef.h:
-
-Debug.h:

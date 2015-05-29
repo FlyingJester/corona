@@ -5,11 +5,11 @@
  */
 #include <map>
 #include <utility>
+#include <string.h>
 #include "corona.h"
 #include "Debug.h"
 #include "SimpleImage.h"
 #include "Utility.h"
-#include <cstring>
 
 
 namespace corona {

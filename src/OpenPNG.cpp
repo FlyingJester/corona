@@ -4,19 +4,13 @@
  *         png_ptr->jmpbuf in older versions of libpng.
  */
 
-#define PNG_SETJMP_SUPPORTED 1
 
 #include <png.h>
 #include "Debug.h"
 #include "Open.h"
 #include "SimpleImage.h"
 #include "Utility.h"
-#include <cstring>
-#if (PNG_LIBPNG_VER < 12000)
-#include <csetjmp>
-#define OLD_PNG
-#else
-#endif
+
 
 namespace corona {
 
@@ -44,14 +38,12 @@ namespace corona {
 
   void PNG_error_function(png_structp png_ptr, png_const_charp warning) {
     // copied from libpng's pngerror.cpp, but without the fprintf
+    //jmp_buf jmpbuf;
+    //memcpy(jmpbuf, png_ptr->jmpbuf, sizeof(jmp_buf));
+    //longjmp(jmpbuf, 1);
 
-#ifdef OLD_PNG
-    png_longjmp(png_ptr, 1);
-#else
-    jmp_buf jmpbuf;
-    memcpy(jmpbuf, png_ptr->jmpbuf, sizeof(jmp_buf));
-    longjmp(jmpbuf, 1);
-#endif
+    // copied from libpng-1.5.12's pngerror.c. don't do anything? really?
+    //png_longjmp(png_ptr, 1);
   }
 
   //////////////////////////////////////////////////////////////////////////////
