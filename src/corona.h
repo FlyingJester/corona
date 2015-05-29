@@ -26,10 +26,7 @@
 
 
 #include <stddef.h>
-<<<<<<< HEAD
-=======
 #include <string>
->>>>>>> 96beb631ab71427b722d5d33a644aae17f529b50
 
 
 // DLLs in Windows should use the standard calling convention

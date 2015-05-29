@@ -28,7 +28,7 @@ while test $# -gt 0; do
             echo /usr/local
             ;;
         --version)
-            echo 1.0.2
+            echo 1.0.3
             ;;
         --cxxflags)
             echo -I/usr/local${prefix}/include
