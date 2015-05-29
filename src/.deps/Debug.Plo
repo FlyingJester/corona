@@ -1,3 +1,0 @@
-Debug.lo: Debug.cpp Debug.h
-
-Debug.h:
